@@ -907,9 +907,141 @@ console.log(isValidPassword("password123")); // เช็คว่ารหั�
 
 ### บันทึกผลการทดลอง 3.2.2
 ```html
-[บันทึกโค้ด ที่นี่]
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบจองห้องพักออนไลน์</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Sarabun', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e0f7fa, #fface3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #2c3e50;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #75206b;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* Container for the form */
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            box-sizing: border-box;
+        }
+
+        /* Label styles */
+        label {
+            font-weight: bold;
+            font-size: 15px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        /* Input and Select styles */
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: #fface3;
+            box-shadow: 0 0 5px rgba(255, 172, 155, 0.6);
+        }
+
+        /* Button styles */
+        button {
+            background-color: #fface3;
+            color: white;
+            font-size: 16px;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #ff80ab;
+        }
+
+        /* Responsive Design for smaller screens */
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>ฟอร์มจองห้องพัก</h1>
+        <form id="bookingForm">
+            <label for="fullname">ชื่อ-นามสกุล:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="กรุณากรอกชื่อ-นามสกุล" required>
+
+            <label for="email">อีเมล:</label>
+            <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+
+            <label for="phone">เบอร์โทรศัพท์:</label>
+            <input type="tel" id="phone" name="phone" placeholder="เบอร์โทร 10 หลัก" required pattern="[0-9]{10}">
+
+            <label for="checkin">วันที่เช็คอิน:</label>
+            <input type="date" id="checkin" name="checkin" required>
+
+            <label for="checkout">วันที่เช็คเอาท์:</label>
+            <input type="date" id="checkout" name="checkout" required>
+
+            <label for="roomtype">ประเภทห้องพัก:</label>
+            <select id="roomtype" name="roomtype" required>
+                <option value="">-- เลือกประเภทห้องพัก --</option>
+                <option value="standard">ห้องมาตรฐาน</option>
+                <option value="deluxe">ห้องดีลักซ์</option>
+                <option value="suite">ห้องสวีท</option>
+            </select>
+
+            <label for="guests">จำนวนผู้เข้าพัก (1-4):</label>
+            <input type="number" id="guests" name="guests" min="1" max="4" required>
+
+            <button type="submit">ยืนยันการจอง</button>
+        </form>
+    </div>
+</body>
+</html>
 ```
-[รูปผลการทดลองที่ 3.2.2]
+![สกรีนช็อต 2025-02-17 001441](https://github.com/user-attachments/assets/36ba1523-9aed-4be8-81cb-ec2a868d7d9a)
+
 
 
 ## ขั้นตอนที่ 3.2.3: การเพิ่มฟังก์ชันด้วย JavaScript
@@ -1014,9 +1146,130 @@ console.log(isValidPassword("password123")); // เช็คว่ารหั�
 
 ### บันทึกผลการทดลอง 3.2.3
 ```html
-[บันทึกโค้ด ที่นี่]
-```
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบจองห้องพักออนไลน์</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ffabe6, #e65ccd);
+            color: #ffabe6;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        /* Form container styles */
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+
+        /* Label styles */
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+            color: #333;
+        }
+
+        /* Input, select and button styles */
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: #ffb0ff;
+            outline: none;
+        }
+
+        button {
+            background-color: #ffabe6;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ffabe6;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            form {
+                padding: 20px;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>แบบฟอร์มจองห้องพัก</h1>
+    <form id="bookingForm">
+        <label for="fullname">ชื่อ-นามสกุล:</label>
+        <input type="text" id="fullname" placeholder="กรุณากรอกชื่อ-นามสกุล" required>
+
+        <label for="email">อีเมล:</label>
+        <input type="email" id="email" placeholder="example@mail.com" required>
+
+        <label for="phone">เบอร์โทร (10 หลัก):</label>
+        <input type="tel" id="phone" placeholder="กรุณากรอกเบอร์โทรศัพท์" required pattern="[0-9]{10}">
+
+        <label for="checkin">วันที่เช็คอิน:</label>
+        <input type="date" id="checkin" required>
+
+        <label for="checkout">วันที่เช็คเอาท์:</label>
+        <input type="date" id="checkout" required>
+
+        <label for="roomtype">ประเภทห้อง:</label>
+        <select id="roomtype" required>
+            <option value="">เลือกประเภทห้อง</option>
+            <option value="standard">ห้องมาตรฐาน</option>
+            <option value="deluxe">ห้องดีลักซ์</option>
+            <option value="suite">ห้องสวีท</option>
+        </select>
+
+        <label for="guests">จำนวนผู้เข้าพัก:</label>
+        <input type="number" id="guests" min="1" max="4" placeholder="กรุณากรอกจำนวนผู้เข้าพัก" required>
+
+        <button type="submit">จองห้องพัก</button>
+    </form>
+</body>
+</html>```
 [รูปผลการทดลองที่ 3.2.3]
+![สกรีนช็อต 2025-02-17 002132](https://github.com/user-attachments/assets/b846bec5-0647-4645-b139-14b0fa50713c)
 
 
 ## คำแนะนำเพิ่มเติม
