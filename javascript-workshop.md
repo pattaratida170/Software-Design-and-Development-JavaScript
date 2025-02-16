@@ -251,7 +251,8 @@ console.log("คะแนนวิชาที่ 2:", score2);
 console.log("คะแนนวิชาที่ 3:", score3);
 console.log("คะแนนเฉลี่ย:", averageScore.toFixed(2)); // ปัดเศษทศนิยม 2 ตำแหน่ง
 ```
-![Uploading สกรีนช็อต 2025-02-16 223802.png…]()
+![สกรีนช็อต 2025-02-16 223802](https://github.com/user-attachments/assets/70365b07-f384-4f39-844f-eaf05fcaeea6)
+
 
 ### 2.3 การควบคุมการทำงาน
 
