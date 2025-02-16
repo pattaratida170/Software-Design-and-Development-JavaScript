@@ -167,10 +167,26 @@ let person = {
 
 ### บันทึกผลการทดลอง 2.1
 ```html
-[บันทึกโค้ด ที่นี่]
+// ประกาศตัวแปรเก็บข้อมูลนักศึกษา
+const studentID = "67030170";  // รหัสนักศึกษา (ค่าคงที่)
+let studentName = "ภัทรธิดา ขำศรีพันธุ์";  // ชื่อนักศึกษา
+let midtermScore = 80;  // คะแนนสอบกลางภาค
+let finalScore = 90;    // คะแนนสอบปลายภาค
+// ประกาศ Object เก็บข้อมูลนักศึกษา
+let student = {
+    id: "67030170",
+    name: "ภัทรธิดา ขำศรีพันธุ์",
+    major: "เทคโนโลยีคอมพิวเตอร์",
+    gpa: 3.65
+};
+// แสดงผลข้อมูลนักศึกษา
+console.log("รหัสนักศึกษา:", studentID);
+console.log("ชื่อนักศึกษา:", studentName);
+console.log("คะแนนสอบกลางภาค:", midtermScore);
+console.log("คะแนนสอบปลายภาค:", finalScore);
+console.log("ข้อมูลนักศึกษา:", student);
 ```
-[รูปผลการทดลองที่ 2.1]
-
+![สกรีนช็อต 2025-02-16 224431](https://github.com/user-attachments/assets/0f28232e-e3e4-4565-9ec9-819df56e486c)
 
 ### 2.2 การดำเนินการทางคณิตศาสตร์
 
@@ -221,9 +237,21 @@ number /= 2;          // เท่ากับ number = number / 2
 
 ### บันทึกผลการทดลอง 2.2
 ```html
-[บันทึกโค้ด ที่นี่]
+// กำหนดคะแนน 3 วิชา
+let score1 = 80;
+let score2 = 90;
+let score3 = 78;
+
+// คำนวณคะแนนเฉลี่ย
+let averageScore = (score1 + score2 + score3) / 3;
+
+// แสดงผลลัพธ์
+console.log("คะแนนวิชาที่ 1:", score1);
+console.log("คะแนนวิชาที่ 2:", score2);
+console.log("คะแนนวิชาที่ 3:", score3);
+console.log("คะแนนเฉลี่ย:", averageScore.toFixed(2)); // ปัดเศษทศนิยม 2 ตำแหน่ง
 ```
-[รูปผลการทดลองที่ 2.2]
+![Uploading สกรีนช็อต 2025-02-16 223802.png…]()
 
 ### 2.3 การควบคุมการทำงาน
 
@@ -354,9 +382,28 @@ for (let i = 1; i <= 5; i++) {
 
 ### บันทึกผลการทดลอง 2.3
 ```html
-[บันทึกโค้ด ที่นี่]
+let number = 5; // กำหนดค่าตัวเลข
+if (number % 2 === 0) {
+    console.log(number, "เป็นเลขคู่");
+} else {
+    console.log(number, "เป็นเลขคี่");
+}
+console.log("ตารางสูตรคูณ แม่ 2");
+for (let i = 1; i <= 12; i++) {
+    console.log(`2 x ${i} = ${2 * i}`);
+}
+
+console.log("ตารางสูตรคูณ แม่ 3");
+let j = 1;
+while (j <= 12) {
+    console.log(`3 x ${j} = ${3 * j}`);
+    j++;
+}
 ```
-[รูปผลการทดลองที่ 2.3]
+![สกรีนช็อต 2025-02-16 225229](https://github.com/user-attachments/assets/e7266b6f-8be8-4723-95e8-2b1b5b13a19c)
+![สกรีนช็อต 2025-02-16 225259](https://github.com/user-attachments/assets/7688edfc-eb64-410e-ba11-65e2bc2640e1)
+![สกรีนช็อต 2025-02-16 225337](https://github.com/user-attachments/assets/64c07f0b-3624-48cb-9157-b9a5264da518)
+
 
 ### 2.4 Functions และ Arrow Functions
 
