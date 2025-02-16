@@ -612,9 +612,31 @@ console.log("เลขคู่:", evenNumbers); // [2, 4]
 
 ### บันทึกผลการทดลอง 2.4.2
 ```html
-[บันทึกโค้ด ที่นี่]
+[// ฟังก์ชันคำนวณค่า BMI
+const calculateBMI = (weight, height) => weight / (height * height);
+
+// ฟังก์ชันทักทายตามอายุ
+const greetByAge = (name, age) => {
+    if (age < 18) {
+        return `สวัสดี ${name}, คุณยังเยาว์`;
+    } else if (age >= 18 && age <= 60) {
+        return `สวัสดี ${name}, ยินดีที่ได้รู้จัก`;
+    } else {
+        return `สวัสดี ${name}, ยินดีที่ได้พบคุณ`;
+    }
+};
+
+// ฟังก์ชันตรวจสอบรหัสผ่าน
+const isValidPassword = password => password.length > 8;
+
+// ทดสอบการใช้งาน
+console.log(calculateBMI(70, 1.75)); // คำนวณ BMI สำหรับน้ำหนัก 70 กิโลกรัม และส่วนสูง 1.75 เมตร
+console.log(greetByAge("สมชาย", 25)); // ทักทายตามอายุ 25 ปี
+console.log(isValidPassword("password123")); // เช็คว่ารหัสผ่านนี้มีความยาวมากกว่า 8 ตัวอักษรหรือไม่]
 ```
 [รูปผลการทดลองที่ 2.4.2]
+![Screenshot 2025-02-17 000737](https://github.com/user-attachments/assets/bf81bea5-5c35-472f-bfd4-52eb0f590624)
+![Screenshot 2025-02-17 000554](https://github.com/user-attachments/assets/d23f9a7e-4ba1-4b13-be75-9bacf408bc78)
 
 
 ## การทดลองที่ 3 : การใช้ JavaScript กับ HTML และ CSS
